@@ -30,6 +30,47 @@ window.PORTFOLIO = {
         { label: 'Repo', href: 'https://github.com/elinzer', primary: true }
       ],
       section: 'projects'
+    },
+    {
+      id: 'coverage-two-color',
+      name: 'Split Identity',
+      cost: ['G', 'U'],
+      type: 'Artifact — Pipeline',
+      rarity: 'uncommon',
+      rules: ['Exercises the two-color gradient.'],
+      links: [{ label: 'Repo', href: 'https://github.com/elinzer', primary: true }],
+      section: 'projects'
+    },
+    {
+      id: 'coverage-three-color',
+      name: 'Gold Fallback',
+      cost: ['W', 'U', 'B'],
+      type: 'Enchantment',
+      rarity: 'rare',
+      rules: ['Three or more colors collapse to the gold treatment.'],
+      links: [{ label: 'Repo', href: 'https://github.com/elinzer', primary: true }],
+      section: 'projects'
+    },
+    {
+      id: 'coverage-colorless',
+      name: 'Colorless Engine',
+      cost: ['C'],
+      type: 'Artifact',
+      rarity: 'common',
+      rules: ['Exercises the colorless palette.'],
+      links: [{ label: 'Repo', href: 'https://github.com/elinzer', primary: true }],
+      section: 'projects'
+    },
+    {
+      id: 'coverage-land-identity',
+      name: 'Identity Without Cost',
+      cost: [],
+      identity: ['R'],
+      type: 'Land',
+      rarity: 'common',
+      rules: ['No mana cost, but colored by identity.'],
+      links: [{ label: 'Repo', href: 'https://github.com/elinzer', primary: true }],
+      section: 'projects'
     }
   ]
 };

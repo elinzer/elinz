@@ -61,6 +61,7 @@
     root.classList.add('rarity-' + card.rarity);
     root.classList.add('motif-' + motifOf(card.id));
     root.dataset.cardId = card.id;
+    root.style.setProperty('--motif-angle', (hash(card.id) % 360) + 'deg');
 
     var nameEl = root.querySelector('.card__name');
     var linkEl = root.querySelector('.card__link');

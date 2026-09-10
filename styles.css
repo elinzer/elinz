@@ -210,3 +210,90 @@ main {
   border: 1px solid var(--rule);
   font: 600 clamp(0.62rem, 3.4cqi, 0.8rem)/1 var(--serif);
 }
+
+:root {
+  --mana-w: #ddd6bd;
+  --mana-u: #3b7fc4;
+  --mana-b: #5b5468;
+  --mana-r: #c05038;
+  --mana-g: #4f9160;
+  --mana-c: #8a8f99;
+  --mana-gold: #c9a227;
+}
+
+.ci-w { --c1: var(--mana-w); --c2: var(--mana-w); }
+.ci-u { --c1: var(--mana-u); --c2: var(--mana-u); }
+.ci-b { --c1: var(--mana-b); --c2: var(--mana-b); }
+.ci-r { --c1: var(--mana-r); --c2: var(--mana-r); }
+.ci-g { --c1: var(--mana-g); --c2: var(--mana-g); }
+.ci-c { --c1: var(--mana-c); --c2: var(--mana-c); }
+
+.ci-wu { --c1: var(--mana-w); --c2: var(--mana-u); }
+.ci-wb { --c1: var(--mana-w); --c2: var(--mana-b); }
+.ci-wr { --c1: var(--mana-w); --c2: var(--mana-r); }
+.ci-wg { --c1: var(--mana-w); --c2: var(--mana-g); }
+.ci-ub { --c1: var(--mana-u); --c2: var(--mana-b); }
+.ci-ur { --c1: var(--mana-u); --c2: var(--mana-r); }
+.ci-ug { --c1: var(--mana-u); --c2: var(--mana-g); }
+.ci-br { --c1: var(--mana-b); --c2: var(--mana-r); }
+.ci-bg { --c1: var(--mana-b); --c2: var(--mana-g); }
+.ci-rg { --c1: var(--mana-r); --c2: var(--mana-g); }
+
+.ci-gold { --c1: var(--mana-gold); --c2: #8c6f1f; }
+
+.card {
+  background:
+    linear-gradient(160deg,
+      color-mix(in srgb, var(--c1, var(--mana-c)) 28%, #10131a),
+      color-mix(in srgb, var(--c2, var(--mana-c)) 18%, #0e1117));
+}
+
+.card__art {
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 22% 18%,
+      color-mix(in srgb, var(--c1) 70%, transparent), transparent 65%),
+    radial-gradient(120% 90% at 82% 88%,
+      color-mix(in srgb, var(--c2) 62%, transparent), transparent 62%),
+    linear-gradient(145deg, #0f1218, #191d27);
+}
+
+.card__art::before,
+.card__art::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  transform: rotate(var(--motif-angle, 0deg));
+}
+
+.card__art::before { opacity: 0.35; }
+
+.motif-rings .card__art::before {
+  background: repeating-radial-gradient(circle at 40% 45%,
+    transparent 0 7px, color-mix(in srgb, var(--c2) 55%, transparent) 7px 9px);
+}
+
+.motif-shards .card__art::before {
+  background: repeating-linear-gradient(58deg,
+    transparent 0 9px, color-mix(in srgb, var(--c2) 50%, transparent) 9px 12px);
+}
+
+.motif-grid .card__art::before {
+  background:
+    repeating-linear-gradient(0deg,
+      transparent 0 11px, color-mix(in srgb, var(--c2) 45%, transparent) 11px 12px),
+    repeating-linear-gradient(90deg,
+      transparent 0 11px, color-mix(in srgb, var(--c2) 45%, transparent) 11px 12px);
+}
+
+.motif-arcs .card__art::before {
+  background: conic-gradient(from 210deg at 30% 70%,
+    color-mix(in srgb, var(--c2) 55%, transparent), transparent 38%, transparent 62%,
+    color-mix(in srgb, var(--c1) 45%, transparent));
+}
+
+.card__art::after {
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}

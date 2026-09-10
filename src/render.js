@@ -98,11 +98,27 @@
     buildPips(card, root.querySelector('.card__pips'));
 
     var rulesEl = root.querySelector('.card__rules');
-    (card.rules || []).forEach(function (line) {
-      var p = document.createElement('p');
-      p.textContent = line;
-      rulesEl.appendChild(p);
-    });
+    var isSaga = /^Saga\b/.test(card.type || '');
+    var isLand = /\bLand\b/.test(card.type || '');
+    if (isSaga) root.classList.add('card--saga');
+    if (isLand) root.classList.add('card--land');
+
+    if (isSaga) {
+      var chapters = document.createElement('ol');
+      chapters.className = 'card__chapters';
+      (card.rules || []).forEach(function (line) {
+        var li = document.createElement('li');
+        li.textContent = line;
+        chapters.appendChild(li);
+      });
+      rulesEl.appendChild(chapters);
+    } else {
+      (card.rules || []).forEach(function (line) {
+        var p = document.createElement('p');
+        p.textContent = line;
+        rulesEl.appendChild(p);
+      });
+    }
 
     var flavorEl = root.querySelector('.card__flavor');
     if (card.flavor) {

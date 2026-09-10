@@ -71,6 +71,32 @@ window.PORTFOLIO = {
       rules: ['No mana cost, but colored by identity.'],
       links: [{ label: 'Repo', href: 'https://github.com/elinzer', primary: true }],
       section: 'projects'
+    },
+    {
+      id: 'coverage-saga',
+      name: 'Coverage Corp',
+      cost: ['W', 'U'],
+      type: 'Saga — Coverage Corp',
+      rarity: 'rare',
+      rules: [
+        'Joined as the third backend engineer.',
+        'Led the migration off the monolith.',
+        'Now owns the platform team roadmap.'
+      ],
+      flavor: 'Senior Engineer \u00b7 2022\u2013present',
+      links: [{ label: 'Company', href: 'https://example.com', primary: true }],
+      section: 'experience'
+    },
+    {
+      id: 'coverage-linkedin',
+      name: 'LinkedIn',
+      cost: [],
+      identity: ['U'],
+      type: 'Land',
+      rarity: 'common',
+      rules: ['Tap: add one professional connection.'],
+      links: [{ label: 'Open', href: 'https://linkedin.com', primary: true }],
+      section: 'contact'
     }
   ]
 };

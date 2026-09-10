@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Linzer — Software Engineer</title>
+<meta name="description" content="Portfolio of El Linzer, software engineer.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="hero__card" data-hero></div>
+    <div class="hero__intro">
+      <h1 id="hero-name">El Linzer</h1>
+      <p class="hero__pitch"></p>
+      <p class="hero__actions"></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
+    <div class="grid" data-section="projects"></div>
+  </section>
+
+  <section class="section" aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
+    <div class="grid" data-section="experience"></div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+    <div class="grid grid--lands" data-section="contact"></div>
+  </section>
+</main>
+
+<script src="src/data.js"></script>
+<script src="src/render.js"></script>
+<script src="src/foil.js"></script>
+</body>
+</html>

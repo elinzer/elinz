@@ -814,9 +814,9 @@ canonical WUBRG order — `ci-gu` can never be produced, so it needs no rule.
   position: relative;
   background:
     radial-gradient(120% 90% at 22% 18%,
-      color-mix(in srgb, var(--c1) 70%, transparent), transparent 65%),
+      color-mix(in srgb, var(--c1, var(--mana-c)) 70%, transparent), transparent 65%),
     radial-gradient(120% 90% at 82% 88%,
-      color-mix(in srgb, var(--c2) 62%, transparent), transparent 62%),
+      color-mix(in srgb, var(--c2, var(--mana-c)) 62%, transparent), transparent 62%),
     linear-gradient(145deg, #0f1218, #191d27);
 }
 

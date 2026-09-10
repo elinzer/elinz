@@ -1,6 +1,10 @@
 (function (global) {
   var WUBRG = 'WUBRGC';
   var MOTIFS = ['rings', 'shards', 'grid', 'arcs'];
+  var COLOR_NAMES = {
+    W: 'white', U: 'blue', B: 'black',
+    R: 'red', G: 'green', C: 'colorless'
+  };
 
   function identityOf(card) {
     var source = (card.identity && card.identity.length) ? card.identity : card.cost;
@@ -52,6 +56,20 @@
     return a;
   }
 
+  function buildPips(card, listEl) {
+    (card.cost || []).forEach(function (raw) {
+      var letter = String(raw).toUpperCase();
+      if (!COLOR_NAMES[letter]) return;
+      var li = document.createElement('li');
+      li.className = 'pip pip--' + letter.toLowerCase();
+      var label = document.createElement('span');
+      label.className = 'visually-hidden';
+      label.textContent = COLOR_NAMES[letter];
+      li.appendChild(label);
+      listEl.appendChild(li);
+    });
+  }
+
   function buildCard(card) {
     var tpl = document.getElementById('card-template');
     var root = tpl.content.firstElementChild.cloneNode(true);
@@ -77,6 +95,7 @@
     }
 
     root.querySelector('.card__type').textContent = card.type;
+    buildPips(card, root.querySelector('.card__pips'));
 
     var rulesEl = root.querySelector('.card__rules');
     (card.rules || []).forEach(function (line) {

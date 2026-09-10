@@ -1,5 +1,21 @@
 window.PORTFOLIO = {
-  hero: null,
+  hero: {
+    id: 'commander',
+    name: 'El Linzer',
+    cost: ['U', 'G'],
+    type: 'Legendary Creature — Human Engineer',
+    rarity: 'mythic',
+    rules: [
+      'Whenever a service enters the battlefield, draw a runbook.',
+      'Backend systems, developer tooling, and the boring reliability work.'
+    ],
+    flavor: 'Ship it, then measure it.',
+    pt: '4/5',
+    links: [],
+    section: 'hero',
+    pitch: 'Software engineer building backend systems and the tooling that keeps them honest.',
+    email: 'el.linzer@spothero.com'
+  },
   cards: [
     {
       id: 'ledger-service',

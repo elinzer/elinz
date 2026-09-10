@@ -378,3 +378,25 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   max-width: 42rem;
 }
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.button:hover { border-color: var(--accent); }
+
+.hero__card .card { max-width: 18rem; }

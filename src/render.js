@@ -145,11 +145,42 @@
     return root;
   }
 
+  function renderHero(hero) {
+    if (!hero) return;
+
+    var slot = document.querySelector('[data-hero]');
+    if (slot) slot.appendChild(buildCard(hero));
+
+    var pitch = document.querySelector('.hero__pitch');
+    if (pitch && hero.pitch) pitch.textContent = hero.pitch;
+
+    var actions = document.querySelector('.hero__actions');
+    if (!actions) return;
+
+    if (hero.resume) {
+      var resume = document.createElement('a');
+      resume.className = 'button';
+      resume.href = hero.resume;
+      resume.textContent = 'Resume';
+      actions.appendChild(resume);
+    }
+
+    if (hero.email) {
+      var mail = document.createElement('a');
+      mail.className = 'button';
+      mail.href = 'mailto:' + hero.email;
+      mail.textContent = 'Email';
+      actions.appendChild(mail);
+    }
+  }
+
   function render() {
     var data = global.PORTFOLIO;
-    if (!data || !data.cards) return;
+    if (!data) return;
 
-    data.cards.forEach(function (card) {
+    renderHero(data.hero);
+
+    (data.cards || []).forEach(function (card) {
       var grid = document.querySelector('[data-section="' + card.section + '"]');
       if (grid) grid.appendChild(buildCard(card));
     });

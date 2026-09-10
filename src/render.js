@@ -85,10 +85,13 @@
     var linkEl = root.querySelector('.card__link');
     var primary = primaryLink(card);
     if (primary) {
+      var isMailto = /^mailto:/i.test(primary.href);
       linkEl.href = primary.href;
       linkEl.textContent = card.name;
-      linkEl.rel = 'noopener noreferrer';
-      linkEl.target = '_blank';
+      if (!isMailto) {
+        linkEl.rel = 'noopener noreferrer';
+        linkEl.target = '_blank';
+      }
       root.classList.add('card--clickable');
     } else {
       nameEl.textContent = card.name;

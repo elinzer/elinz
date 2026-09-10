@@ -260,7 +260,7 @@ cd /Users/el.linzer/Documents/projects/elinz && python3 -m http.server 8000
 In another shell:
 
 ```bash
-for p in / styles.css src/data.js src/render.js src/foil.js; do
+for p in "" styles.css src/data.js src/render.js src/foil.js; do
   printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code}' "http://localhost:8000/$p")" "$p"
 done
 ```
@@ -1603,8 +1603,10 @@ without the frame changing size.
 cd /Users/el.linzer/Documents/projects/elinz && grep -c "href: '#'" src/data.js
 ```
 
-Expected: `12`. Note the number — replacing content later means driving it to
-zero.
+Expected: `13` — eight across the six projects, three across the sagas, and
+two of the three lands. The email land uses a real `mailto:` and is
+deliberately not counted. Note the number: replacing content later means
+driving it to zero.
 
 - [ ] **Step 5: Commit**
 
@@ -1961,7 +1963,7 @@ names render in a serif with visibly different letterforms from Georgia, and
 no text is invisible during load.
 
 ```bash
-cd /Users/el.linzer/Documents/projects/elinz && grep -rnE '(src|href|url\()="?/[^/]' index.html styles.css && echo "FAIL: root-relative path found" || echo "OK: all paths relative"
+cd /Users/el.linzer/Documents/projects/elinz && grep -nE '(src|href)="/|url\((["'"'"']?)/' index.html styles.css && echo "FAIL: root-relative path found" || echo "OK: all paths relative"
 ```
 
 Expected: `OK: all paths relative`.

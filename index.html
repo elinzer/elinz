@@ -36,6 +36,25 @@
   </section>
 </main>
 
+<template id="card-template">
+  <article class="card">
+    <header class="card__title">
+      <h3 class="card__name"><a class="card__link"></a></h3>
+      <ul class="card__pips"></ul>
+    </header>
+    <div class="card__art" aria-hidden="true"></div>
+    <p class="card__type"></p>
+    <div class="card__text">
+      <div class="card__rules"></div>
+      <p class="card__flavor"></p>
+    </div>
+    <footer class="card__footer">
+      <ul class="card__links"></ul>
+      <span class="card__pt"></span>
+    </footer>
+  </article>
+</template>
+
 <script src="src/data.js"></script>
 <script src="src/render.js"></script>
 <script src="src/foil.js"></script>

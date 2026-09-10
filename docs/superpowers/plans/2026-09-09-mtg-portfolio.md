@@ -158,6 +158,7 @@ referenced now so a missing-file 404 shows up immediately rather than later.
   --accent: #c9a227;
   --gap: 1.25rem;
   --card-radius: 4.75%;
+  --card-pad: 5.5%;
   --measure: 68rem;
   --serif: Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -601,7 +602,7 @@ cd /Users/el.linzer/Documents/projects/elinz && git add index.html src/data.js s
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto minmax(0, 1.15fr) auto;
   gap: 0.4rem;
-  padding: 0.55rem;
+  padding: var(--card-pad);
   border-radius: var(--card-radius);
   background: #14171f;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.45);

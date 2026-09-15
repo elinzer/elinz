@@ -624,7 +624,7 @@ cd /Users/el.linzer/Documents/projects/elinz && git add index.html src/data.js s
   border: 1px solid var(--rule);
 }
 
-.card__title { justify-content: space-between; }
+.card__title { justify-content: space-between; position: static; }
 
 .card__name {
   margin: 0;

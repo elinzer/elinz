@@ -152,7 +152,15 @@
     if (!hero) return;
 
     var slot = document.querySelector('[data-hero]');
-    if (slot) slot.appendChild(buildCard(hero));
+    var card = buildCard(hero);
+    var heading = card.querySelector('.card__name');
+    if (heading) {
+      var name = document.createElement('p');
+      name.className = 'card__name';
+      name.textContent = heading.textContent;
+      heading.parentNode.replaceChild(name, heading);
+    }
+    if (slot) slot.appendChild(card);
 
     var pitch = document.querySelector('.hero__pitch');
     if (pitch && hero.pitch) pitch.textContent = hero.pitch;

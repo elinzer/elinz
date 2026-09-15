@@ -123,7 +123,7 @@ main {
   border: 1px solid var(--rule);
 }
 
-.card__title { justify-content: space-between; }
+.card__title { justify-content: space-between; position: static; }
 
 .card__name {
   margin: 0;

@@ -1,6 +1,6 @@
 (function (global) {
   var WUBRG = 'WUBRGC';
-  var MOTIFS = ['rings', 'shards', 'grid', 'arcs'];
+  var MOTIFS = ['rings', 'mosaic', 'plasma', 'dither', 'truchet'];
   var COLOR_NAMES = {
     W: 'white', U: 'blue', B: 'black',
     R: 'red', G: 'green', C: 'colorless'
@@ -35,10 +35,6 @@
     return h >>> 0;
   }
 
-  function motifOf(id) {
-    return MOTIFS[hash(id) % MOTIFS.length];
-  }
-
   function primaryLink(card) {
     var links = card.links || [];
     for (var i = 0; i < links.length; i++) {
@@ -70,16 +66,16 @@
     });
   }
 
-  function buildCard(card) {
+  function buildCard(card, variant) {
     var tpl = document.getElementById('card-template');
     var root = tpl.content.firstElementChild.cloneNode(true);
     var identity = identityOf(card);
 
     root.classList.add(identityClass(identity));
     root.classList.add('rarity-' + card.rarity);
-    root.classList.add('motif-' + motifOf(card.id));
+    root.classList.add('motif-' + MOTIFS[(variant || 0) % MOTIFS.length]);
     root.dataset.cardId = card.id;
-    root.style.setProperty('--motif-angle', (hash(card.id) % 360) + 'deg');
+    root.style.setProperty('--art-seed', ((hash(card.id) >>> 8) % 100) / 100);
 
     var nameEl = root.querySelector('.card__name');
     var linkEl = root.querySelector('.card__link');
@@ -148,11 +144,11 @@
     return root;
   }
 
-  function renderHero(hero) {
+  function renderHero(hero, variant) {
     if (!hero) return;
 
     var slot = document.querySelector('[data-hero]');
-    var card = buildCard(hero);
+    var card = buildCard(hero, variant);
     var heading = card.querySelector('.card__name');
     if (heading) {
       var name = document.createElement('p');
@@ -189,11 +185,11 @@
     var data = global.PORTFOLIO;
     if (!data) return;
 
-    renderHero(data.hero);
+    renderHero(data.hero, 0);
 
-    (data.cards || []).forEach(function (card) {
+    (data.cards || []).forEach(function (card, i) {
       var grid = document.querySelector('[data-section="' + card.section + '"]');
-      if (grid) grid.appendChild(buildCard(card));
+      if (grid) grid.appendChild(buildCard(card, i + 1));
     });
   }
 
@@ -201,7 +197,6 @@
     identityOf: identityOf,
     identityClass: identityClass,
     hash: hash,
-    motifOf: motifOf,
     buildCard: buildCard
   };
 

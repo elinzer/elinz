@@ -22,7 +22,9 @@ Then open http://localhost:8000.
 | `styles.css` | Design tokens, card frame, layout, motion |
 | `src/data.js` | All site content — the only file edited routinely |
 | `src/render.js` | Renders data into the template |
-| `src/foil.js` | Pointer-driven tilt and sheen |
+| `motifs.css` | Generated pixel masks for card art — do not edit by hand |
+| `tools/motifs.js` | Generates `motifs.css`; run `node tools/motifs.js` after editing a motif |
+| `assets/fonts/` | Self-hosted Silkscreen pixel font and its license |
 
 All asset paths are document-relative. The site is served from a subpath
 (`/elinz/`), so a leading `/` on any asset path breaks it in production while

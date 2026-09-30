@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Linzer — Software Engineer</title>
+<meta name="description" content="Portfolio of El Linzer, software engineer.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motifs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="hero__card" data-hero></div>
+    <div class="hero__intro">
+      <h1 id="hero-name">El Linzer</h1>
+      <p class="hero__pitch"></p>
+      <p class="hero__actions"></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
+    <div class="grid" data-section="projects"></div>
+  </section>
+
+  <section class="section" aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
+    <div class="grid" data-section="experience"></div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+    <div class="grid grid--lands" data-section="contact"></div>
+  </section>
+</main>
+
+<template id="card-template">
+  <article class="card">
+    <header class="card__title">
+      <h3 class="card__name"><a class="card__link"></a></h3>
+      <ul class="card__pips"></ul>
+    </header>
+    <div class="card__art" aria-hidden="true"></div>
+    <p class="card__type"></p>
+    <div class="card__text">
+      <div class="card__rules"></div>
+      <p class="card__flavor"></p>
+    </div>
+    <footer class="card__footer">
+      <ul class="card__links"></ul>
+      <span class="card__pt"></span>
+    </footer>
+  </article>
+</template>
+
+<script src="src/data.js"></script>
+<script src="src/render.js"></script>
+</body>
+</html>

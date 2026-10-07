@@ -1,192 +1,210 @@
 window.PORTFOLIO = {
   hero: {
-    id: 'commander',
-    name: 'El Linzer',
-    cost: ['U', 'G'],
-    type: 'Legendary Creature — Human Engineer',
-    rarity: 'mythic',
+    id: "commander",
+    name: "El Linzer",
+    cost: ["U", "G"],
+    type: "Legendary Creature — Human Engineer",
+    rarity: "mythic",
     rules: [
-      'Whenever a service enters the battlefield, draw a runbook.',
-      'Backend systems, developer tooling, and the boring reliability work.'
+      "Django and Kotlin, from internal admin tools to Android push alerts.",
+      "Whenever a manual workflow enters the battlefield, automate it.",
     ],
-    flavor: 'Ship it, then measure it.',
-    pt: '4/5',
+    flavor: "Came to code from case management. Still solving for people.",
+    pt: "4/5",
     links: [],
-    section: 'hero',
-    pitch: 'Software engineer building backend systems and the tooling that keeps them honest.',
-    email: 'el.linzer@spothero.com'
+    section: "hero",
+    pitch:
+      "Software engineer in Chicago building Django backends, internal tooling, and the automation that takes busywork off people’s plates.",
+    email: "elinzer5@gmail.com",
   },
   cards: [
     {
-      id: 'ledger-service',
-      name: 'Ledger Service',
-      cost: ['U'],
-      type: 'Artifact — Service',
-      rarity: 'mythic',
+      id: "event-evader",
+      name: "Event Evader",
+      cost: ["R", "G"],
+      type: "Artifact — Mobile App",
+      rarity: "mythic",
       rules: [
-        'Go, Postgres, and a write-ahead queue.',
-        'Reconciles 40k transactions a day with no manual intervention.'
+        "Alerts you to concerts and games near you so you can route around the traffic.",
+        "Live on Android and iOS.",
       ],
-      flavor: 'Every entry balances, or nothing does.',
-      pt: '2k rps',
+      flavor: "Co-founder & Engineer · 2023–present",
       links: [
-        { label: 'Repo', href: '#', primary: true },
-        { label: 'Write-up', href: '#' }
+        { label: "Site", href: "https://eventevader.com", primary: true },
+        {
+          label: "Android",
+          href: "https://play.google.com/store/apps/details?id=com.eventevader.release",
+        },
+        {
+          label: "iOS",
+          href: "https://apps.apple.com/us/app/event-evader/id6752586846",
+        },
       ],
-      section: 'projects'
-    },
-    {
-      id: 'drift-detector',
-      name: 'Drift Detector',
-      cost: ['U', 'G'],
-      type: 'Enchantment — Tooling',
-      rarity: 'rare',
-      rules: [
-        'Diffs live infrastructure against Terraform state nightly.',
-        'Opens a pull request describing what changed and who changed it.'
-      ],
-      flavor: 'Nothing drifts quietly for long.',
-      pt: '18 repos',
-      links: [{ label: 'Repo', href: '#', primary: true }],
-      section: 'projects'
-    },
-    {
-      id: 'cold-path',
-      name: 'Cold Path',
-      cost: ['B'],
-      type: 'Sorcery — Migration',
-      rarity: 'rare',
-      rules: [
-        'Moved eleven years of event history off a rented Oracle box.',
-        'Cut the annual bill by 68% and the p99 read by half.'
-      ],
-      flavor: 'Exile target legacy system.',
-      pt: '-$310k/yr',
-      links: [{ label: 'Write-up', href: '#', primary: true }],
-      section: 'projects'
-    },
-    {
-      id: 'flightcheck',
-      name: 'Flightcheck',
-      cost: ['W'],
-      type: 'Instant — Test Harness',
-      rarity: 'uncommon',
-      rules: [
-        'Runs contract tests against every service before a deploy proceeds.',
-        'Fails the pipeline in under ninety seconds.'
-      ],
-      flavor: 'Counter target regression.',
-      pt: '90s',
-      links: [
-        { label: 'Repo', href: '#', primary: true },
-        { label: 'Docs', href: '#' }
-      ],
-      section: 'projects'
-    },
-    {
-      id: 'hot-lane',
-      name: 'Hot Lane',
-      cost: ['R'],
-      type: 'Artifact — Cache',
-      rarity: 'uncommon',
-      rules: [
-        'A read-through cache layer with per-tenant eviction budgets.',
-        'Took the checkout path from 240ms to 38ms at p95.'
-      ],
-      flavor: 'Haste.',
-      pt: '38ms',
-      links: [{ label: 'Repo', href: '#', primary: true }],
-      section: 'projects'
-    },
-    {
-      id: 'paper-trail',
-      name: 'Paper Trail',
-      cost: ['C'],
-      type: 'Artifact',
-      rarity: 'common',
-      rules: ['A small CLI that turns git history into a release changelog.'],
-      links: [{ label: 'Repo', href: '#', primary: true }],
-      section: 'projects'
+      section: "projects",
     },
 
     {
-      id: 'saga-current',
-      name: 'Coverage Corp',
-      cost: ['U', 'G'],
-      type: 'Saga — Coverage Corp',
-      rarity: 'mythic',
+      id: "admin-rbac",
+      name: "Least Privilege",
+      cost: ["W", "U"],
+      type: "Enchantment — SpotHero",
+      rarity: "mythic",
       rules: [
-        'Joined as the third backend engineer on a team of nine.',
-        'Led the migration off the monolith across four quarters.',
-        'Built the deploy tooling the whole org now uses.',
-        'Now owns the platform roadmap and mentors two engineers.'
+        "Replaced legacy is_staff fallbacks with explicit permission checks.",
+        "Role-based access across SpotHero’s whole internal admin platform.",
       ],
-      flavor: 'Senior Software Engineer · 2022–present',
-      links: [{ label: 'Company', href: '#', primary: true }],
-      section: 'experience'
+      flavor: "No one passes without the right key.",
+      // pt: "15+ groups",
+      links: [],
+      section: "achievements",
     },
     {
-      id: 'saga-previous',
-      name: 'Midfield Systems',
-      cost: ['U'],
-      type: 'Saga — Midfield Systems',
-      rarity: 'rare',
+      id: "reseller-enforcement",
+      name: "Reseller Enforcement",
+      cost: ["B"],
+      type: "Sorcery — SpotHero",
+      rarity: "rare",
       rules: [
-        'Owned the billing service end to end.',
-        'Rewrote the invoicing pipeline with zero customer-visible downtime.',
-        'Cut on-call pages for the team by two thirds.'
+        "A new Django app that detects reseller fraud and acts on it.",
+        "Opens Salesforce tickets and runs cancel-and-ban workflows on its own.",
       ],
-      flavor: 'Software Engineer · 2019–2022',
-      links: [{ label: 'Company', href: '#', primary: true }],
-      section: 'experience'
+      flavor: "Exile target scalper.",
+      links: [],
+      section: "achievements",
     },
     {
-      id: 'saga-first',
-      name: 'First Light',
-      cost: ['W'],
-      type: 'Saga — First Light',
-      rarity: 'uncommon',
+      id: "cancellation-consensus",
+      name: "Cancellation Consensus",
+      cost: ["U", "B"],
+      type: "Enchantment — SpotHero",
+      rarity: "rare",
       rules: [
-        'First engineering role, on a team of three.',
-        'Shipped the customer portal that carried the company through Series A.'
+        "Built automatic cancellation handling across four ticketing vendors.",
+        "Stopped drivers from booking parking for cancelled shows.",
       ],
-      flavor: 'Junior Engineer · 2017–2019',
-      links: [{ label: 'Company', href: '#', primary: true }],
-      section: 'experience'
+      flavor: "Four sources. One truth.",
+      links: [],
+      section: "achievements",
+    },
+    {
+      id: "push-pipeline",
+      name: "Push Pipeline",
+      cost: ["R"],
+      type: "Artifact — Event Evader",
+      rarity: "rare",
+      rules: [
+        "Django notification service, token API, and Celery-scheduled delivery.",
+        "Firebase Cloud Messaging and notification preferences on Android.",
+      ],
+      flavor: "Your venue just announced a show.",
+      links: [],
+      section: "achievements",
+    },
+    {
+      id: "venue-api",
+      name: "Venue Finder",
+      cost: ["G"],
+      type: "Instant — Event Evader",
+      rarity: "uncommon",
+      rules: [
+        "REST endpoints for following, searching, and listing venues.",
+        "Live event data from the Ticketmaster Discovery API.",
+      ],
+      links: [],
+      section: "achievements",
     },
 
     {
-      id: 'land-linkedin',
-      name: 'LinkedIn',
-      cost: [],
-      identity: ['U'],
-      type: 'Land',
-      rarity: 'common',
-      rules: ['Tap: add one professional connection.'],
-      links: [{ label: 'Open', href: '#', primary: true }],
-      section: 'contact'
+      id: "saga-spothero",
+      name: "SpotHero",
+      cost: ["U", "W"],
+      type: "Saga — SpotHero",
+      rarity: "mythic",
+      rules: [
+        "Built apps for Customer Service, Sales, and Supply.",
+        "Automated reseller fraud handling, end to end.",
+        "Led role-based access control across the admin platform.",
+      ],
+      flavor: "Software Engineer · 2023–present",
+      links: [
+        { label: "Company", href: "https://spothero.com", primary: true },
+      ],
+      section: "experience",
     },
     {
-      id: 'land-github',
-      name: 'GitHub',
-      cost: [],
-      identity: ['B'],
-      type: 'Land',
-      rarity: 'common',
-      rules: ['Tap: reveal the top card of the commit history.'],
-      links: [{ label: 'Open', href: '#', primary: true }],
-      section: 'contact'
+      id: "saga-code-nation",
+      name: "Code Nation",
+      cost: ["W"],
+      type: "Saga — Code Nation",
+      rarity: "uncommon",
+      rules: [
+        "Taught HTML, CSS, and JavaScript to high school students.",
+        "Mentored them through hands-on projects.",
+      ],
+      flavor: "Classroom Volunteer · 2023–2024",
+      links: [{ label: "Org", href: "https://codenation.org", primary: true }],
+      section: "experience",
     },
     {
-      id: 'land-email',
-      name: 'Email',
+      id: "saga-sarahs-circle",
+      name: "Sarah’s Circle",
+      cost: ["W", "G"],
+      type: "Saga — Sarah’s Circle",
+      rarity: "uncommon",
+      rules: [
+        "Managed a caseload of 25 clients with competing priorities.",
+        "Coordinated across government, medical, and mental health systems.",
+        "Reached an 84% rate of stable housing outcomes.",
+      ],
+      flavor: "Case Manager · 2020–2022",
+      links: [
+        { label: "Org", href: "https://www.sarahs-circle.org", primary: true },
+      ],
+      section: "experience",
+    },
+
+    {
+      id: "land-linkedin",
+      name: "LinkedIn",
       cost: [],
-      identity: ['W'],
-      type: 'Land',
-      rarity: 'common',
-      rules: ['Tap: begin a conversation.'],
-      links: [{ label: 'Open', href: 'mailto:el.linzer@spothero.com', primary: true }],
-      section: 'contact'
-    }
-  ]
+      identity: ["U"],
+      type: "Land",
+      rarity: "common",
+      rules: ["Tap: add one professional connection."],
+      links: [
+        {
+          label: "Open",
+          href: "https://www.linkedin.com/in/elinzer/",
+          primary: true,
+        },
+      ],
+      section: "contact",
+    },
+    {
+      id: "land-github",
+      name: "GitHub",
+      cost: [],
+      identity: ["B"],
+      type: "Land",
+      rarity: "common",
+      rules: ["Tap: reveal the top card of the commit history."],
+      links: [
+        { label: "Open", href: "https://github.com/elinzer", primary: true },
+      ],
+      section: "contact",
+    },
+    {
+      id: "land-email",
+      name: "Email",
+      cost: [],
+      identity: ["W"],
+      type: "Land",
+      rarity: "common",
+      rules: ["Tap: begin a conversation."],
+      links: [
+        { label: "Open", href: "mailto:elinzer5@gmail.com", primary: true },
+      ],
+      section: "contact",
+    },
+  ],
 };
